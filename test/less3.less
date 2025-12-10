@@ -1,0 +1,556 @@
+// Variables
+@color-primary: #E5006A;
+@color-link: #00A99D;
+@color-text: #333333;
+@color-text-light: #666666;
+@color-border: #E5E5E5;
+@color-bg: #F5F5F5;
+@color-white: #FFFFFF;
+@color-gray-dark: #5A5A5A;
+@color-label-bg: #F9F3F5;
+@color-input-bg: #EFEFEF;
+
+@font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+
+@breakpoint-tablet: 768px;
+@breakpoint-mobile: 480px;
+
+// Mixins
+.container-width() {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: @font-family;
+    font-size: 14px;
+    line-height: 1.6;
+    color: @color-text;
+    background-color: @color-bg;
+}
+
+a {
+    color: @color-link;
+    text-decoration: none;
+    
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// Header
+.header {
+    background-color: @color-white;
+    padding: 20px 0;
+    border-bottom: 1px solid @color-border;
+    
+    &__container {
+        .container-width();
+    }
+    
+    &__logo {
+        display: inline-block;
+    }
+    
+    &__logo-tagline {
+        font-size: 11px;
+        color: @color-primary;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
+    
+    &__logo-brand {
+        font-size: 28px;
+        font-weight: bold;
+        color: @color-primary;
+        letter-spacing: 2px;
+        line-height: 1;
+    }
+}
+
+// Main
+.main {
+    padding: 40px 0;
+    
+    &__container {
+        .container-width();
+    }
+}
+
+// Page Title
+.page-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: @color-text;
+    text-align: center;
+    margin-bottom: 40px;
+    
+    @media (max-width: @breakpoint-mobile) {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+}
+
+// Progress
+.progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 8px;
+    
+    &__step {
+        flex: 1;
+        background-color: #E8E8E8;
+        padding: 18px 20px;
+        text-align: center;
+        position: relative;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 28px 0 28px 20px;
+            border-color: transparent transparent transparent #E8E8E8;
+            z-index: 1;
+        }
+        
+        &:last-child::after {
+            display: none;
+        }
+        
+        &--active {
+            background-color: @color-gray-dark;
+            
+            &::after {
+                border-color: transparent transparent transparent @color-gray-dark;
+            }
+            
+            .progress__step-text {
+                color: @color-white;
+            }
+        }
+    }
+    
+    &__step-text {
+        font-size: 14px;
+        font-weight: bold;
+        color: @color-text;
+        position: relative;
+        z-index: 2;
+    }
+    
+    @media (max-width: @breakpoint-mobile) {
+        flex-direction: column;
+        gap: 10px;
+        
+        &__step {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+// Form Container
+.form-container {
+    background-color: @color-white;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    @media (max-width: @breakpoint-mobile) {
+        padding: 20px;
+    }
+}
+
+// Form Intro
+.form-intro {
+    margin-bottom: 30px;
+    
+    &__text {
+        margin-bottom: 10px;
+        line-height: 1.8;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    &__link {
+        color: @color-link;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+}
+
+// Form
+.form {
+    // Form Section
+    &-section {
+        display: flex;
+        border-top: 1px solid @color-border;
+        
+        &__title {
+            flex: 0 0 280px;
+            background-color: @color-label-bg;
+            padding: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: @color-text;
+            border-right: 1px solid @color-border;
+        }
+        
+        @media (max-width: @breakpoint-tablet) {
+            flex-direction: column;
+            
+            &__title {
+                flex: none;
+                border-right: none;
+                border-bottom: 1px solid @color-border;
+            }
+        }
+    }
+    
+    // Form Row (replaces form-group)
+    &-row {
+        display: flex;
+        border-top: 1px solid @color-border;
+        
+        &:first-child {
+            border-top: none;
+        }
+        
+        &__label {
+            flex: 0 0 280px;
+            background-color: @color-label-bg;
+            padding: 20px;
+            border-right: 1px solid @color-border;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        &__field {
+            flex: 1;
+            padding: 20px;
+            background-color: @color-white;
+        }
+        
+        @media (max-width: @breakpoint-tablet) {
+            flex-direction: column;
+            
+            &__label {
+                flex: none;
+                border-right: none;
+                border-bottom: 1px solid @color-border;
+                padding: 15px;
+            }
+            
+            &__field {
+                padding: 15px;
+            }
+        }
+    }
+    
+    // Form Label
+    &-label {
+        font-weight: bold;
+        color: @color-text;
+        line-height: 1.6;
+        font-size: 14px;
+        
+        &__note {
+            font-size: 12px;
+            font-weight: normal;
+            color: @color-text;
+            margin: 5px 0 0 0;
+        }
+        
+        &__sub {
+            font-size: 12px;
+            font-weight: normal;
+        }
+    }
+    
+    // Form Badge
+    &-badge {
+        display: inline-block;
+        padding: 3px 8px;
+        font-size: 11px;
+        font-weight: bold;
+        border-radius: 3px;
+        line-height: 1.4;
+        
+        &--required {
+            background-color: @color-primary;
+            color: @color-white;
+        }
+    }
+    
+    // Form Input
+    &-input,
+    &-select,
+    &-textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid @color-border;
+        border-radius: 3px;
+        font-size: 14px;
+        font-family: @font-family;
+        background-color: @color-input-bg;
+        transition: border-color 0.3s;
+        
+        &:focus {
+            outline: none;
+            border-color: @color-link;
+            background-color: @color-white;
+        }
+    }
+    
+    &-input--small {
+        max-width: 200px;
+        
+        @media (max-width: @breakpoint-tablet) {
+            max-width: 100%;
+        }
+    }
+    
+    &-select {
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        padding-right: 35px;
+    }
+    
+    &-textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+    
+    // Form Hint
+    &-hint {
+        font-size: 12px;
+        color: @color-text-light;
+        margin-top: 8px;
+        line-height: 1.5;
+    }
+}
+
+// Checkbox Grid (for 2-row layout)
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px 15px;
+    
+    @media (max-width: @breakpoint-tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (max-width: @breakpoint-mobile) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    
+    &__input {
+        width: 18px;
+        height: 18px;
+        margin: 0;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+    
+    &__label {
+        margin-left: 8px;
+        font-size: 14px;
+        color: @color-text;
+        cursor: pointer;
+        line-height: 1.4;
+    }
+}
+
+// Radio Group
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    
+    &__input {
+        width: 18px;
+        height: 18px;
+        margin: 0;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+    
+    &__label {
+        margin-left: 8px;
+        font-size: 14px;
+        color: @color-text;
+        cursor: pointer;
+    }
+}
+
+// Form Submit
+.form-submit {
+    text-align: center;
+    margin: 40px 0 30px;
+    
+    &__button {
+        background-color: @color-primary;
+        color: @color-white;
+        border: none;
+        padding: 15px 60px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        
+        &:hover {
+            background-color: darken(@color-primary, 10%);
+        }
+        
+        &-icon {
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: @breakpoint-mobile) {
+            width: 100%;
+            padding: 15px 30px;
+        }
+    }
+}
+
+// Form Notice
+.form-notice {
+    background-color: #FAFAFA;
+    padding: 20px;
+    border-radius: 4px;
+    margin-top: 30px;
+    
+    &__text {
+        font-size: 12px;
+        color: @color-text-light;
+        line-height: 1.8;
+        margin-bottom: 12px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        strong {
+            color: @color-text;
+            font-weight: bold;
+        }
+    }
+}
+
+// Footer
+.footer {
+    background-color: @color-white;
+    padding: 40px 0 20px;
+    border-top: 1px solid @color-border;
+    margin-top: 40px;
+    
+    &__container {
+        .container-width();
+    }
+    
+    &__links {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 13px;
+    }
+    
+    &__link {
+        color: @color-link;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    &__separator {
+        margin: 0 10px;
+        color: @color-text-light;
+    }
+    
+    &__sites {
+        margin-bottom: 30px;
+    }
+    
+    &__site-row {
+        display: flex;
+        padding: 15px 0;
+        border-bottom: 1px solid @color-border;
+        
+        &:last-child {
+            border-bottom: none;
+        }
+        
+        @media (max-width: @breakpoint-mobile) {
+            flex-direction: column;
+            gap: 8px;
+        }
+    }
+    
+    &__site-label {
+        flex: 0 0 220px;
+        font-weight: bold;
+        color: @color-text;
+        font-size: 13px;
+        
+        @media (max-width: @breakpoint-mobile) {
+            flex: none;
+        }
+    }
+    
+    &__site-value {
+        flex: 1;
+        font-size: 13px;
+    }
+    
+    &__site-link {
+        color: @color-link;
+        word-break: break-all;
+    }
+    
+    &__copyright {
+        text-align: center;
+        font-size: 11px;
+        color: @color-text-light;
+        padding-top: 20px;
+    }
+}
