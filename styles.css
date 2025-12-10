@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #F5F5F5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+a:hover {
+  opacity: 0.8;
+}
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+@media (min-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+.header {
+  background-color: #FFFFFF;
+  padding: 16px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  text-align: center;
+}
+.logo-tagline {
+  font-size: 12px;
+  color: #E91E63;
+  margin-bottom: 2px;
+}
+.logo-brand {
+  font-size: 18px;
+  font-weight: bold;
+  color: #E91E63;
+  letter-spacing: 1px;
+}
+.main {
+  padding: 24px 0;
+}
+.page-title {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #333333;
+}
+.progress-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 0;
+}
+.progress-step {
+  position: relative;
+  background-color: #E0E0E0;
+  padding: 12px 20px;
+  font-size: 12px;
+  color: #333333;
+  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 0 100%);
+}
+.progress-step:first-child {
+  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 0 100%, 0 0);
+  padding-left: 20px;
+}
+.progress-step:last-child {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  padding-right: 20px;
+}
+.progress-step:not(:first-child) {
+  margin-left: -1px;
+}
+.progress-step--active {
+  background-color: #5D5D5D;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+.progress-step__label {
+  position: relative;
+  z-index: 1;
+}
+.form-container {
+  background-color: #FFFFFF;
+  padding: 24px;
+  border-radius: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.form-intro {
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+.form-intro p {
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+.link-green {
+  color: #00C853;
+  text-decoration: underline;
+}
+.link-green:hover {
+  opacity: 0.8;
+}
+.contact-form {
+  width: 100%;
+}
+.section-divider {
+  margin: 24px 0 20px 0;
+}
+.section-divider .section-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .form-row {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+.form-label-col {
+  width: 100%;
+  margin-bottom: 8px;
+}
+@media (min-width: 768px) {
+  .form-label-col {
+    width: 250px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    margin-right: 16px;
+  }
+}
+.form-input-col {
+  flex: 1;
+  width: 100%;
+}
+.form-label {
+  background-color: #E8E8E8;
+  padding: 12px;
+  font-size: 13px;
+  color: #333333;
+  border: 1px solid #CCCCCC;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+  min-height: 40px;
+}
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 13px;
+  border: 1px solid #CCCCCC;
+  background-color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  transition: border-color 0.3s ease;
+  min-height: 40px;
+}
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #E91E63;
+}
+.form-input::placeholder,
+.form-select::placeholder,
+.form-textarea::placeholder {
+  color: #999999;
+  font-size: 13px;
+}
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+}
+.form-hint {
+  font-size: 12px;
+  color: #666666;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.form-note {
+  font-size: 12px;
+  color: #666666;
+  margin-bottom: 12px;
+}
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+@media (min-width: 576px) {
+  .checkbox-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 20px;
+  }
+}
+@media (min-width: 768px) {
+  .checkbox-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+@media (min-width: 576px) {
+  .radio-group {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+.checkbox-item,
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.checkbox-item input[type="checkbox"],
+.radio-item input[type="checkbox"],
+.checkbox-item input[type="radio"],
+.radio-item input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #E91E63;
+  flex-shrink: 0;
+}
+.checkbox-item label,
+.radio-item label {
+  cursor: pointer;
+  font-size: 13px;
+  user-select: none;
+  line-height: 1.4;
+}
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.badge--required {
+  background-color: #E91E63;
+  color: #FFFFFF;
+}
+.form-submit {
+  text-align: center;
+  margin-top: 40px;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 40px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  text-align: center;
+  min-width: 120px;
+}
+.btn--primary {
+  background-color: #E91E63;
+  color: #FFFFFF;
+}
+.btn--primary:hover {
+  background-color: #C2185B;
+}
+.disclaimer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #CCCCCC;
+  font-size: 12px;
+  color: #666666;
+  line-height: 1.6;
+}
+.disclaimer p {
+  margin-bottom: 12px;
+}
+.footer {
+  background-color: #FFFFFF;
+  padding: 24px 0;
+  margin-top: 24px;
+  border-top: 1px solid #CCCCCC;
+}
+.footer-links {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 12px;
+}
+.footer-link {
+  color: #00C853;
+  text-decoration: underline;
+}
+.footer-link:hover {
+  opacity: 0.8;
+}
+.footer-separator {
+  margin: 0 12px;
+  color: #666666;
+}
+.footer-sites {
+  margin-bottom: 16px;
+}
+.sites-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.sites-table tbody tr {
+  border-bottom: 1px solid #CCCCCC;
+}
+.sites-table tbody tr:last-child {
+  border-bottom: none;
+}
+.sites-table__label {
+  padding: 12px;
+  font-weight: bold;
+  width: 35%;
+  vertical-align: top;
+  text-align: left;
+}
+.sites-table__link {
+  padding: 12px;
+  word-break: break-all;
+}
+.sites-table__link a {
+  color: #00C853;
+  text-decoration: underline;
+}
+.sites-table__link a:hover {
+  opacity: 0.8;
+}
+.footer-copyright {
+  text-align: center;
+  font-size: 11px;
+  color: #666666;
+}
+.footer-copyright p {
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .container {
+    padding: 0 12px;
+  }
+  .form-container {
+    padding: 16px;
+  }
+  .form-label-col {
+    margin-bottom: 12px;
+  }
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+  .radio-group {
+    flex-direction: column;
+  }
+  .progress-step {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+  .progress-step:first-child {
+    padding-left: 12px;
+  }
+  .progress-step:last-child {
+    padding-right: 12px;
+  }
+}
