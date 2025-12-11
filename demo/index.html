@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【取引き希望】お問い合わせ | 飲食店お役立ちナビ | なんでも酒やカクヤス</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-tagline">なんでも酒や</div>
+                <div class="logo-brand">カクヤス</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Page Title -->
+            <h1 class="page-title">【取引き希望】お問い合わせ</h1>
+
+            <!-- Progress Indicator -->
+            <div class="progress-indicator">
+                <div class="progress-step progress-step--active">
+                    <span class="progress-step__label">フォームの入力</span>
+                </div>
+                <div class="progress-step">
+                    <span class="progress-step__label">内容を確認する</span>
+                </div>
+                <div class="progress-step">
+                    <span class="progress-step__label">完了</span>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <!-- Introduction -->
+                <div class="form-intro">
+                    <p>下記のフォームに必要項目を入力の上ご送信ください。追ってご連絡させていただきます。</p>
+                    <p>すでにお取引がある飲食店様は<a href="#" class="link-green">【得意先様専用】お問い合わせフォーム</a>よりお問い合わせください。</p>
+                </div>
+
+                <!-- Form -->
+                <form class="contact-form" id="contactForm">
+                    <!-- Hidden Title Field -->
+                    <input type="hidden" id="title" name="title" value="【取引き希望】お問い合わせ">
+
+                    <!-- Inquiry Items Section -->
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">
+                                お問い合わせ項目
+                                <span class="badge badge--required">必須</span>
+                            </div>
+                        </div>
+                        <div class="form-input-col">
+                            <p class="form-note">※複数選択可</p>
+                            <div class="checkbox-grid">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="koumoku-1" name="koumoku[]" value="継続したお取り引き希望">
+                                    <label for="koumoku-1">継続したお取り引き希望</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="koumoku-2" name="koumoku[]" value="説明希望">
+                                    <label for="koumoku-2">説明希望</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="koumoku-3" name="koumoku[]" value="新規開業">
+                                    <label for="koumoku-3">新規開業</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="koumoku-4" name="koumoku[]" value="新たに酒類を導入希望">
+                                    <label for="koumoku-4">新たに酒類を導入希望</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="koumoku-5" name="koumoku[]" value="見積り希望">
+                                    <label for="koumoku-5">見積り希望</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="koumoku-6" name="koumoku[]" value="商品について">
+                                    <label for="koumoku-6">商品について</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="koumoku-7" name="koumoku[]" value="その他">
+                                    <label for="koumoku-7">その他</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Current Liquor Store -->
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">
+                                現在お取り引きしている酒屋はありますか？
+                                <span class="badge badge--required">必須</span>
+                            </div>
+                        </div>
+                        <div class="form-input-col">
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="sakaya-1" name="sakaya" value="ある">
+                                    <label for="sakaya-1">ある</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="sakaya-2" name="sakaya" value="ない">
+                                    <label for="sakaya-2">ない</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="sakaya-3" name="sakaya" value="カクヤスと取り引き中">
+                                    <label for="sakaya-3">カクヤスと取り引き中</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Store Information Section -->
+                    <div class="section-divider">
+                        <h2 class="section-title">店舗様情報</h2>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">
+                                貴店名
+                                <span class="badge badge--required">必須</span>
+                            </div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="text" id="company" name="company" class="form-input" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">郵便番号（半角数字のみ）</div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="text" id="postal-code" name="postal-code" class="form-input" placeholder="">
+                            <p class="form-hint">入力例：1234567（ハイフンは不要です）</p>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">都道府県</div>
+                        </div>
+                        <div class="form-input-col">
+                            <select id="prefectures" name="prefectures" class="form-select">
+                                <option value="">選択してください</option>
+                                <option value="埼玉県">埼玉県</option>
+                                <option value="千葉県">千葉県</option>
+                                <option value="東京都">東京都</option>
+                                <option value="神奈川県">神奈川県</option>
+                                <option value="京都府">京都府</option>
+                                <option value="大阪府">大阪府</option>
+                                <option value="兵庫県">兵庫県</option>
+                                <option value="福岡県">福岡県</option>
+                                <option value="佐賀県">佐賀県</option>
+                                <option value="長崎県">長崎県</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">
+                                ご住所
+                                <span class="badge badge--required">必須</span>
+                            </div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="text" id="address" name="address" class="form-input" placeholder="">
+                            <p class="form-hint">入力例：北区豊島2-◯-◯</p>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">ビル名・建物名</div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="text" id="bldg" name="bldg" class="form-input" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">業態</div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="text" id="industry" name="industry" class="form-input" placeholder="">
+                            <p class="form-hint">例）居酒屋、バー、中華料理店 等</p>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">店舗数（半角英数記号のみ）</div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="text" id="stores" name="stores" class="form-input" placeholder="">
+                        </div>
+                    </div>
+
+                    <!-- Corporate Information Section (Optional) -->
+                    <div class="section-divider">
+                        <h2 class="section-title">法人様情報（任意）</h2>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">貴社名</div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="text" id="corporate-name" name="corporate-name" class="form-input" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">経営者様名</div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="text" id="president-name" name="president-name" class="form-input" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">郵便番号（半角数字のみ）</div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="text" id="corporate-postal-code" name="corporate-postal-code" class="form-input" placeholder="">
+                            <p class="form-hint">入力例：1234567（ハイフンは不要です）</p>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">都道府県</div>
+                        </div>
+                        <div class="form-input-col">
+                            <select id="prefectures02" name="prefectures02" class="form-select">
+                                <option value="">選択してください</option>
+                                <option value="北海道">北海道</option>
+                                <option value="青森県">青森県</option>
+                                <option value="岩手県">岩手県</option>
+                                <option value="宮城県">宮城県</option>
+                                <option value="秋田県">秋田県</option>
+                                <option value="山形県">山形県</option>
+                                <option value="福島県">福島県</option>
+                                <option value="茨城県">茨城県</option>
+                                <option value="栃木県">栃木県</option>
+                                <option value="群馬県">群馬県</option>
+                                <option value="埼玉県">埼玉県</option>
+                                <option value="千葉県">千葉県</option>
+                                <option value="東京都">東京都</option>
+                                <option value="神奈川県">神奈川県</option>
+                                <option value="新潟県">新潟県</option>
+                                <option value="富山県">富山県</option>
+                                <option value="石川県">石川県</option>
+                                <option value="福井県">福井県</option>
+                                <option value="山梨県">山梨県</option>
+                                <option value="長野県">長野県</option>
+                                <option value="岐阜県">岐阜県</option>
+                                <option value="静岡県">静岡県</option>
+                                <option value="愛知県">愛知県</option>
+                                <option value="三重県">三重県</option>
+                                <option value="滋賀県">滋賀県</option>
+                                <option value="京都府">京都府</option>
+                                <option value="大阪府">大阪府</option>
+                                <option value="兵庫県">兵庫県</option>
+                                <option value="奈良県">奈良県</option>
+                                <option value="和歌山県">和歌山県</option>
+                                <option value="鳥取県">鳥取県</option>
+                                <option value="島根県">島根県</option>
+                                <option value="岡山県">岡山県</option>
+                                <option value="広島県">広島県</option>
+                                <option value="山口県">山口県</option>
+                                <option value="徳島県">徳島県</option>
+                                <option value="香川県">香川県</option>
+                                <option value="愛媛県">愛媛県</option>
+                                <option value="高知県">高知県</option>
+                                <option value="福岡県">福岡県</option>
+                                <option value="佐賀県">佐賀県</option>
+                                <option value="長崎県">長崎県</option>
+                                <option value="熊本県">熊本県</option>
+                                <option value="大分県">大分県</option>
+                                <option value="宮崎県">宮崎県</option>
+                                <option value="鹿児島県">鹿児島県</option>
+                                <option value="沖縄県">沖縄県</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">ご住所</div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="text" id="address02" name="address02" class="form-input" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">ビル名・建物名</div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="text" id="bldg02" name="bldg02" class="form-input" placeholder="">
+                        </div>
+                    </div>
+
+                    <!-- Contact Person Information Section -->
+                    <div class="section-divider">
+                        <h2 class="section-title">ご担当者様情報</h2>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">
+                                ご担当者様名
+                                <span class="badge badge--required">必須</span>
+                            </div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="text" id="name" name="name" class="form-input" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">役職</div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="text" id="position" name="position" class="form-input" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">
+                                連絡先電話番号（半角数字のみ）
+                                <span class="badge badge--required">必須</span>
+                            </div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="tel" id="phone-number" name="phone-number" class="form-input" placeholder="">
+                            <p class="form-hint">入力例：0312345678</p>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">
+                                メールアドレス
+                                <span class="badge badge--required">必須</span>
+                            </div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="email" id="email" name="email" class="form-input" placeholder="">
+                            <p class="form-hint">入力例：foo@example.com</p>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">他に検討されている酒販店名</div>
+                        </div>
+                        <div class="form-input-col">
+                            <input type="text" id="message01" name="message01" class="form-input" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label-col">
+                            <div class="form-label">事前にお伝えしたい内容がございましたらご記入ください</div>
+                        </div>
+                        <div class="form-input-col">
+                            <textarea id="message02" name="message02" class="form-textarea" rows="6" placeholder=""></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Hidden System Fields -->
+                    <input type="hidden" id="flow-type" name="flow-type" value="">
+                    <input type="hidden" id="formpage-id" name="formpage-id" value="37092">
+                    <input type="hidden" id="application-page" name="application-page" value="https://pro-navi.kakuyasu.co.jp/form/neworder/transaction/">
+
+                    <!-- Submit Button -->
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn--primary">確認</button>
+                    </div>
+                </form>
+
+                <!-- Disclaimer -->
+                <div class="disclaimer">
+                    <p>※お寄せいただきましたご意見・ご質問等の内容は厳重に取り扱い、お客様へのお返事、ならびに当社のサービス向上・改善に生かすためのもので、それ以外の目的で使用することはございません。またお客様からご提供いただいた個人情報は保護に努めます。</p>
+                    <p>※当社からのお返事はこの度頂戴したお問い合わせに対する回答をお客様個人宛にお送りするものです。弊社からのご案内内容について一部または全部を転載、二次利用することはご遠慮ください。</p>
+                    <p>※お問い合わせの内容によりましては回答しかねる場合もございます。</p>
+                    <p>※お問い合わせへのご返信には数日かかる場合もございます。特に土日祝前日のお問い合わせにはさらに日数がかかる場合もございますので、予めご了承ください。またメールではなくお電話やお手紙等でご連絡、対応させていただく場合もございます。</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#" class="footer-link">運営会社</a>
+                <span class="footer-separator">|</span>
+                <a href="#" class="footer-link">個人情報保護への取り組み</a>
+                <span class="footer-separator">|</span>
+                <a href="#" class="footer-link">ご利用規約</a>
+            </div>
+
+            <div class="footer-sites">
+                <table class="sites-table">
+                    <tbody>
+                        <tr>
+                            <td class="sites-table__label">カクヤスナビオンライン</td>
+                            <td class="sites-table__link">
+                                <a href="https://navi-online.kakuyasu.co.jp" target="_blank" rel="noopener noreferrer">https://navi-online.kakuyasu.co.jp</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sites-table__label">飲食店お役立ちナビ</td>
+                            <td class="sites-table__link">
+                                <a href="https://pro-navi.kakuyasu.co.jp" target="_blank" rel="noopener noreferrer">https://pro-navi.kakuyasu.co.jp</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sites-table__label">飲食店なんでもスクエア</td>
+                            <td class="sites-table__link">
+                                <a href="https://pro.nandemosake.com" target="_blank" rel="noopener noreferrer">https://pro.nandemosake.com</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="footer-copyright">
+                <p>© KAKUYASU ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
